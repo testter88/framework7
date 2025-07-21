@@ -26,6 +26,8 @@ interface useStore {
 
 declare const useStore: useStore;
 
+declare const setTheme: (theme: string) => void;
+
 // EXPORT_COMPONENTS
-export { f7, f7ready, theme, useStore };
+export { f7, f7ready, theme, useStore, setTheme };
 export default Framework7Vue;
