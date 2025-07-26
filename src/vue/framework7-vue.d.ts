@@ -1,5 +1,5 @@
-import Framework7, { Framework7Plugin } from 'framework7/types';
-import { Store } from 'framework7/types';
+import Framework7, { Framework7Plugin } from '@xenknight/framework7/types';
+import { Store } from '@xenknight/framework7/types';
 
 // IMPORT_COMPONENTS
 

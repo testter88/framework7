@@ -70,7 +70,7 @@ import {
   f7Link,
   f7Toolbar,
   f7NavRight,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

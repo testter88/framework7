@@ -388,7 +388,7 @@ import {
   f7Searchbar,
   f7Icon,
   theme,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

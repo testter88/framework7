@@ -120,7 +120,7 @@ import {
   f7Button,
   f7SkeletonBlock,
   f7Card,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

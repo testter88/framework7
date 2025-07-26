@@ -1,5 +1,5 @@
 /* eslint-disable import/no-mutable-exports */
-import Framework7 from 'framework7/lite';
+import Framework7 from '@xenknight/framework7/lite';
 import { extend, unsetRouterIds } from './utils.js';
 
 let f7;

@@ -350,7 +350,7 @@ import {
   f7BlockFooter,
   f7Icon,
   f7Toggle,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

@@ -30,7 +30,7 @@ import {
   f7Block,
   f7List,
   f7ListItem,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

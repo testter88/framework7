@@ -123,7 +123,7 @@ import {
   f7Fab,
   f7Icon,
   f7Link,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

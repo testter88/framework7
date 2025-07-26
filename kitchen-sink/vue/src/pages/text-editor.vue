@@ -110,7 +110,7 @@ import {
   f7TextEditor,
   f7List,
   f7ListInput,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

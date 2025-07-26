@@ -1,5 +1,5 @@
 {
-  "name": "framework7-vue",
+  "name": "@xenknight/framework7-vue",
   "private": true,
   "module": "framework7-vue.js",
   "typings": "framework7-vue.d.ts"

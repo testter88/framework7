@@ -92,7 +92,7 @@ import {
   f7AccordionContent,
   f7List,
   f7ListItem,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

@@ -101,7 +101,15 @@
   </f7-page>
 </template>
 <script>
-import { f7Navbar, f7Page, f7BlockTitle, f7Chip, f7Block, f7Icon, f7 } from 'framework7-vue';
+import {
+  f7Navbar,
+  f7Page,
+  f7BlockTitle,
+  f7Chip,
+  f7Block,
+  f7Icon,
+  f7,
+} from '@xenknight/framework7-vue';
 import $ from 'dom7';
 
 export default {

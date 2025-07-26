@@ -173,7 +173,14 @@
   </f7-page>
 </template>
 <script>
-import { f7Page, f7Navbar, f7List, f7ListGroup, f7ListItem, f7ListIndex } from 'framework7-vue';
+import {
+  f7Page,
+  f7Navbar,
+  f7List,
+  f7ListGroup,
+  f7ListItem,
+  f7ListIndex,
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

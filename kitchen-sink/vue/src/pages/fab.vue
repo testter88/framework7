@@ -134,7 +134,7 @@ import {
   f7FabButton,
   f7Icon,
   f7Block,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

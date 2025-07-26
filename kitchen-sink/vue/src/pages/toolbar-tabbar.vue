@@ -36,7 +36,7 @@ import {
   f7Link,
   f7BlockTitle,
   f7Block,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

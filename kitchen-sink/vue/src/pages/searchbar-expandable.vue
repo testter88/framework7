@@ -73,7 +73,7 @@ import {
   f7Link,
   f7NavRight,
   theme,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

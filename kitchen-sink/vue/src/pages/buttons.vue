@@ -116,7 +116,7 @@
 </template>
 <script>
 import { ref } from 'vue';
-import { f7Navbar, f7Page, f7BlockTitle, f7Block, f7Button } from 'framework7-vue';
+import { f7Navbar, f7Page, f7BlockTitle, f7Block, f7Button } from '@xenknight/framework7-vue';
 
 export default {
   components: {

@@ -21,7 +21,7 @@ export default {
         __dirname,
         `../../${buildFolder}/core/framework7-bundle.css`,
       ),
-      'framework7/lite': path.resolve(
+      '@xenknight/framework7/lite': path.resolve(
         __dirname,
         `../../${buildFolder}/core/framework7-lite.esm.js`,
       ),

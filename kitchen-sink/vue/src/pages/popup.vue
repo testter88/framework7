@@ -201,7 +201,7 @@ import {
   f7Button,
   f7View,
   f7,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

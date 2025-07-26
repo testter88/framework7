@@ -65,7 +65,7 @@ import {
   f7List,
   f7ListItem,
   f7Icon,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

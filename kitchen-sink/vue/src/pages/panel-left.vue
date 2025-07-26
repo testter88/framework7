@@ -43,7 +43,14 @@
   </f7-page>
 </template>
 <script>
-import { f7Page, f7BlockTitle, f7Block, f7List, f7ListItem, f7Link } from 'framework7-vue';
+import {
+  f7Page,
+  f7BlockTitle,
+  f7Block,
+  f7List,
+  f7ListItem,
+  f7Link,
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

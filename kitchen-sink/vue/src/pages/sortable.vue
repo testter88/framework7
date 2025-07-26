@@ -130,7 +130,7 @@ import {
   f7Link,
   f7Icon,
   f7BlockTitle,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

@@ -38,7 +38,7 @@
   </f7-page>
 </template>
 <script>
-import { f7Navbar, f7Page, f7Block, f7Subnavbar } from 'framework7-vue';
+import { f7Navbar, f7Page, f7Block, f7Subnavbar } from '@xenknight/framework7-vue';
 
 export default {
   components: {

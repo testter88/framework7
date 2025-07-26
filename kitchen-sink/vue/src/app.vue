@@ -19,7 +19,7 @@
   </f7-app>
 </template>
 <script>
-import { f7App, f7Panel, f7View } from 'framework7-vue';
+import { f7App, f7Panel, f7View } from '@xenknight/framework7-vue';
 import routes from './routes';
 import store from './store';
 

@@ -44,7 +44,7 @@
 </template>
 <script>
 import { ref } from 'vue';
-import { f7Navbar, f7Page, f7Block, f7Button, f7Segmented } from 'framework7-vue';
+import { f7Navbar, f7Page, f7Block, f7Button, f7Segmented } from '@xenknight/framework7-vue';
 
 export default {
   components: {

@@ -123,7 +123,7 @@ import {
   f7Block,
   f7BlockHeader,
   f7BlockFooter,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

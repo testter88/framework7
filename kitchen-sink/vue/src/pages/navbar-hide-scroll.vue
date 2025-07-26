@@ -159,7 +159,7 @@
   </f7-page>
 </template>
 <script>
-import { f7Navbar, f7Page, f7Block } from 'framework7-vue';
+import { f7Navbar, f7Page, f7Block } from '@xenknight/framework7-vue';
 
 export default {
   components: {

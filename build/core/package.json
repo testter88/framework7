@@ -1,5 +1,5 @@
 {
-  "name": "framework7",
+  "name": "@xenknight/framework7",
   "private": true,
   "main": "framework7.esm.js",
   "module": "framework7.esm.js",

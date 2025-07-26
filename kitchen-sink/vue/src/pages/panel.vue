@@ -30,7 +30,7 @@
   </f7-page>
 </template>
 <script>
-import { f7Navbar, f7Page, f7Block, f7Button, f7Link, f7Panel } from 'framework7-vue';
+import { f7Navbar, f7Page, f7Block, f7Button, f7Link, f7Panel } from '@xenknight/framework7-vue';
 
 export default {
   components: {

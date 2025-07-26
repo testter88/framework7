@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-import { createStore } from 'framework7/lite';
+import { createStore } from '@xenknight/framework7/lite';
 
 const store = createStore({
   state: {

@@ -1,11 +1,11 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-extraneous-dependencies */
 import { createApp } from 'vue';
-import Framework7 from 'framework7/lite/bundle';
-import Framework7Vue from 'framework7-vue';
+import Framework7 from '@xenknight/framework7/lite/bundle';
+import Framework7Vue from '@xenknight/framework7-vue';
 import App from './app.vue';
 
-import 'framework7/css/bundle';
+import '@xenknight/framework7/css/bundle';
 import '../../core/css/app.css';
 
 // Demo

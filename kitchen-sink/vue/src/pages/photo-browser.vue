@@ -75,7 +75,7 @@
   </f7-page>
 </template>
 <script>
-import { f7Navbar, f7Page, f7PhotoBrowser, f7Block, f7Button } from 'framework7-vue';
+import { f7Navbar, f7Page, f7PhotoBrowser, f7Block, f7Button } from '@xenknight/framework7-vue';
 
 export default {
   components: {

@@ -300,7 +300,7 @@ import {
   f7List,
   f7ListItem,
   f7Stepper,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

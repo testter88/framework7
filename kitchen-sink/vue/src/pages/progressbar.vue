@@ -100,7 +100,7 @@ import {
   f7Button,
   f7Segmented,
   f7,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

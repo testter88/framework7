@@ -68,7 +68,7 @@ import {
   f7ListButton,
   f7ListInput,
   f7,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

@@ -60,7 +60,7 @@ import {
   f7Searchbar,
   f7Block,
   theme,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

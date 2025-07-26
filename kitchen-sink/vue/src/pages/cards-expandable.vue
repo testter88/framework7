@@ -217,7 +217,7 @@ import {
   f7CardContent,
   f7Link,
   f7Button,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

@@ -32,7 +32,7 @@
   </f7-popup>
 </template>
 <script>
-import { f7Popup, f7Navbar, f7NavRight, f7Link, f7Page, f7Block } from 'framework7-vue';
+import { f7Popup, f7Navbar, f7NavRight, f7Link, f7Page, f7Block } from '@xenknight/framework7-vue';
 
 export default {
   components: {

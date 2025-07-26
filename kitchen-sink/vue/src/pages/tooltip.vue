@@ -69,7 +69,7 @@ import {
   f7BlockTitle,
   f7Button,
   f7,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

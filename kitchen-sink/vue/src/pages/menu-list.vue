@@ -81,7 +81,7 @@
 </template>
 <script>
 import { ref } from 'vue';
-import { f7Navbar, f7Page, f7Block, f7List, f7ListItem, f7Icon } from 'framework7-vue';
+import { f7Navbar, f7Page, f7Block, f7List, f7ListItem, f7Icon } from '@xenknight/framework7-vue';
 
 export default {
   components: {

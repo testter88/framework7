@@ -246,7 +246,7 @@ import {
   f7SwipeoutButton,
   f7Block,
   f7,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 
 export default {
   components: {

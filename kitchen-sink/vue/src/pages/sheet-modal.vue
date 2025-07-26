@@ -263,7 +263,7 @@ import {
   f7List,
   f7ListItem,
   f7,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 import $ from 'dom7';
 
 export default {

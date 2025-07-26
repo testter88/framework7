@@ -258,7 +258,7 @@ import {
   f7Treeview,
   f7TreeviewItem,
   f7Checkbox,
-} from 'framework7-vue';
+} from '@xenknight/framework7-vue';
 import $ from 'dom7';
 
 export default {
