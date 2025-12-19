@@ -1,6 +1,6 @@
 {
   "name": "@xenknight/framework7",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "Full featured mobile HTML framework for building iOS & Android apps",
   "type": "module",
   "exports": {

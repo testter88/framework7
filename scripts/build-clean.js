@@ -1,5 +1,8 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 const exec = require('exec-sh');
+const glob = require('glob');
+const fs = require('fs');
+const path = require('path');
 const getOutput = require('./get-output.js');
 
 async function buildClean(project, cb) {
@@ -8,9 +11,11 @@ async function buildClean(project, cb) {
     return;
   }
   const output = `${getOutput()}/${project}`;
-  const toRemove = [
-    "find **/*.js -type f -not -name 'postinstall.js' -print0 | xargs -0  -I {} rm -v {}",
-    "find *.js -type f -not -name 'postinstall.js' -print0 | xargs -0  -I {} rm -v {}",
+
+  // Use glob to find and delete files instead of xargs
+  const patterns = [
+    '**/*.js',
+    '*.js',
     '**/*.ts',
     '*.ts',
     '**/*.svelte',
@@ -21,18 +26,35 @@ async function buildClean(project, cb) {
     '*.less',
     '**/*.map',
     '*.map',
-    'cjs',
-    'esm',
-    'components',
-    'less',
-    'modules',
-    'types/*.ts',
-    'types/components',
-    'types/modules',
-    'types/shared',
-  ].map((command) => (command.includes('find') ? command : `rm -rf ${command}`));
+  ];
 
-  await exec.promise(`cd ${output} && ${toRemove.join(' && ')}`);
+  const dirs = ['cjs', 'esm', 'components', 'less', 'modules', 'types'];
+
+  try {
+    // Delete files matching patterns, excluding postinstall.js
+    for (const pattern of patterns) {
+      const files = glob.sync(pattern, { cwd: output, nodir: true });
+      for (const file of files) {
+        if (!file.includes('postinstall.js')) {
+          try {
+            fs.unlinkSync(path.join(output, file));
+          } catch (e) {
+            // Ignore errors for individual files
+          }
+        }
+      }
+    }
+
+    // Delete directories
+    for (const dir of dirs) {
+      const dirPath = path.join(output, dir);
+      if (fs.existsSync(dirPath)) {
+        await exec.promise(`rm -rf "${dirPath}"`, true);
+      }
+    }
+  } catch (e) {
+    console.error('Error during cleanup:', e.message);
+  }
 
   if (cb) cb();
 }
