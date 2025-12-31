@@ -1,0 +1,105 @@
+.md {
+  .navbar-new {
+    .title-large {
+      align-items: center;
+      overflow: hidden;
+    }
+    .left {
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+    a.link {
+      padding: 0 12px;
+      min-width: 48px;
+      height: var(--f7-navbar-new-link-height, var(--f7-navbar-new-height));
+    }
+    a.icon-only {
+      min-width: 0;
+      flex-shrink: 0;
+      width: 48px;
+    }
+    .right {
+      .ltr({
+        margin-left: auto;
+        margin-right: 4px;
+      });
+      .rtl({
+        margin-left: 4px;
+        margin-right: auto;
+      });
+    }
+    .right:first-child {
+      .ltr({
+        right: var(--f7-safe-area-right)
+      });
+      .rtl({
+        left: var(--f7-safe-area-left)
+      });
+    }
+  }
+  .navbar-pane {
+    display: contents;
+  }
+  .navbar-new-bg {
+    background: var(--f7-navbar-new-bg-color);
+    background-color: var(--f7-navbar-new-bg-color, var(--f7-bars-bg-color));
+    &:after,
+    &:before {
+      backface-visibility: hidden;
+    }
+    .hairline(bottom, var(--f7-navbar-new-border-color, var(--f7-bars-border-color)));
+    &:after {
+      z-index: 1;
+    }
+  }
+  .navbar-new-inner {
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+  .navbar-new-large:not(.navbar-new-large-collapsed) .navbar-new-inner {
+    overflow: visible;
+  }
+  .page.page-with-subnavbar .navbar-new-inner {
+    overflow: visible;
+  }
+  .navbar-new-inner:not(.navbar-new-inner-centered-title) .title:first-child {
+    margin-left: 16px;
+  }
+  .navbar-new-inner-centered-title {
+    justify-content: space-between;
+    .right {
+      .ltr({
+        margin-left: 0;
+      });
+      .rtl({
+        margin-right: 0;
+      });
+    }
+    .title {
+      text-align: center;
+    }
+  }
+  // Transparent navbar
+  .navbar-new-transparent:not(.navbar-new-large):not(.navbar-new-transparent-visible):not(
+      .with-searchbar-expandable-enabled
+    ) {
+    .navbar-new-bg,
+    .title {
+      opacity: 0;
+    }
+  }
+
+  // Large Title Navbar
+  .navbar-new-large .navbar-new-bg {
+    height: calc(100% + var(--f7-navbar-new-large-title-height));
+    transform: translate3d(
+      0px,
+      calc(-1 * var(--f7-navbar-new-large-collapse-progress) * var(--f7-navbar-new-large-title-height)),
+      0
+    );
+  }
+  .navbar-new-large-transparent .navbar-new-bg,
+  .navbar-new-large.navbar-new-transparent .navbar-new-bg {
+    opacity: var(--f7-navbar-new-large-collapse-progress);
+  }
+}
