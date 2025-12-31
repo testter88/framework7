@@ -3,6 +3,7 @@ import { computed, ref, onMounted, onBeforeUnmount, h } from 'vue';
 import { classNames } from '../shared/utils.js';
 import { colorClasses, colorProps } from '../shared/mixins.js';
 import { f7ready, f7 } from '../shared/f7.js';
+import $ from '../../core/shared/dom7.js';
 import f7PageContent from './page-content.js';
 
 export default {
@@ -97,7 +98,11 @@ export default {
       if (typeof props.withSubnavbar === 'undefined' && typeof props.subnavbar === 'undefined') {
         if (
           (page.$navbarEl && page.$navbarEl.length && page.$navbarEl.find('.subnavbar').length) ||
-          page.$el.children('.navbar').find('.subnavbar').length
+          (page.$navbarNewEl &&
+            page.$navbarNewEl.length &&
+            page.$navbarNewEl.find('.subnavbar').length) ||
+          page.$el.children('.navbar').find('.subnavbar').length ||
+          page.$el.children('.navbar-new').find('.subnavbar').length
         ) {
           hasSubnavbar = true;
         }
@@ -108,6 +113,9 @@ export default {
         typeof props.navbarLarge === 'undefined'
       ) {
         if (page.$navbarEl && page.$navbarEl.hasClass('navbar-large')) {
+          hasNavbarLarge = true;
+        }
+        if (page.$navbarNewEl && page.$navbarNewEl.hasClass('navbar-new-large')) {
           hasNavbarLarge = true;
         }
       }
@@ -183,6 +191,22 @@ export default {
       if (elRef.value !== pageEl) return;
       hasNavbarLargeCollapsed = false;
     };
+    const onNavbarNewCollapse = (navbarEl) => {
+      if (!elRef.value) return;
+      const $navbarEl = $(navbarEl);
+      const $pageEl = $navbarEl.parents('.page');
+      if ($pageEl.length && $pageEl[0] === elRef.value) {
+        hasNavbarLargeCollapsed = true;
+      }
+    };
+    const onNavbarNewExpand = (navbarEl) => {
+      if (!elRef.value) return;
+      const $navbarEl = $(navbarEl);
+      const $pageEl = $navbarEl.parents('.page');
+      if ($pageEl.length && $pageEl[0] === elRef.value) {
+        hasNavbarLargeCollapsed = false;
+      }
+    };
     const onCardOpened = (cardEl, pageEl) => {
       if (elRef.value !== pageEl) return;
       hasCardExpandableOpened = true;
@@ -236,6 +260,8 @@ export default {
         f7.on('pageMasterUnstack', onPageMasterUnstack);
         f7.on('pageNavbarLargeCollapsed', onPageNavbarLargeCollapsed);
         f7.on('pageNavbarLargeExpanded', onPageNavbarLargeExpanded);
+        f7.on('navbarNewCollapse', onNavbarNewCollapse);
+        f7.on('navbarNewExpand', onNavbarNewExpand);
         f7.on('cardOpened', onCardOpened);
         f7.on('cardClose', onCardClose);
         f7.on('pageTabShow', onPageTabShow);
@@ -260,6 +286,8 @@ export default {
       f7.off('pageMasterUnstack', onPageMasterUnstack);
       f7.off('pageNavbarLargeCollapsed', onPageNavbarLargeCollapsed);
       f7.off('pageNavbarLargeExpanded', onPageNavbarLargeExpanded);
+      f7.off('navbarNewCollapse', onNavbarNewCollapse);
+      f7.off('navbarNewExpand', onNavbarNewExpand);
       f7.off('cardOpened', onCardOpened);
       f7.off('cardClose', onCardClose);
       f7.off('pageTabShow', onPageTabShow);
@@ -289,9 +317,10 @@ export default {
       ),
     );
 
-    const fixedTags = 'navbar toolbar tabbar subnavbar searchbar messagebar fab list-index panel'
-      .split(' ')
-      .map((tagName) => `f7-${tagName}`);
+    const fixedTags =
+      'navbar navbar-new toolbar tabbar subnavbar searchbar messagebar fab list-index panel'
+        .split(' ')
+        .map((tagName) => `f7-${tagName}`);
 
     return () => {
       const fixedList = [];
@@ -314,6 +343,13 @@ export default {
           if (tag === 'f7-subnavbar') hasSubnavbarComputed = true;
           if (tag === 'f7-navbar') {
             if (vnode.props && (vnode.props.large || vnode.props.large === ''))
+              hasNavbarLargeComputed = true;
+          }
+          if (tag === 'f7-navbar-new') {
+            if (
+              vnode.props &&
+              (vnode.props.large || vnode.props.largeTransparent || vnode.props.large === '')
+            )
               hasNavbarLargeComputed = true;
           }
           if (typeof hasMessages === 'undefined' && tag === 'f7-messages') hasMessages = true;
@@ -343,7 +379,8 @@ export default {
         (hasNavbarLargeComputed || hasNavbarLarge) &&
         typeof props.navbarLarge === 'undefined' &&
         typeof props.withNavbarLarge === 'undefined' &&
-        classesValue.indexOf('page-with-navbar-large') < 0
+        classesValue.indexOf('page-with-navbar-large') < 0 &&
+        classesValue.indexOf('page-with-navbar-new-large') < 0
       ) {
         classesValue += ' page-with-navbar-large';
       }

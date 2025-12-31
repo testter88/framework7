@@ -26,6 +26,13 @@ import TouchRipple from './components/touch-ripple/touch-ripple.js';
 import Modal from './components/modal/modal.js';
 import Router from './modules/router/router-class.js';
 
+// New Navbar
+import NavbarNew from './components/navbar-new/navbar.js';
+// New Searchbar
+import SearchbarNew from './components/searchbar-new/searchbar.js';
+// New Toolbar
+import ToolbarNew from './components/toolbar-new/toolbar.js';
+
 //IMPORT_COMPONENTS
 
 // UMD_ONLY_START
@@ -52,7 +59,10 @@ Framework7.use([
   Statusbar,
   View,
   Navbar,
+  NavbarNew,
+  SearchbarNew,
   Toolbar,
+  ToolbarNew,
   Subnavbar,
   TouchRipple,
   Modal,

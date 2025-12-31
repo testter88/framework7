@@ -56,6 +56,22 @@
         </div>
       </div>
     </f7-block>
+    <f7-block-title medium>Material Color Scheme</f7-block-title>
+    <f7-list strong inset dividers-ios>
+      <f7-list-item title="Monochrome">
+        <template #after>
+          <f7-toggle
+            :checked="monochrome"
+            @toggle:change="() => setMdColorSchemeMonochrome(!monochrome)"
+          />
+        </template>
+      </f7-list-item>
+      <f7-list-item title="Vibrant">
+        <template #after>
+          <f7-toggle :checked="vibrant" @toggle:change="() => setMdColorSchemeVibrant(!vibrant)" />
+        </template>
+      </f7-list-item>
+    </f7-list>
     <f7-block-title medium>Custom Color Theme</f7-block-title>
     <f7-list strong-ios outline-ios>
       <f7-list-input
@@ -96,6 +112,8 @@ import {
   f7Checkbox,
   f7Link,
   f7Toolbar,
+  f7Toggle,
+  f7ListItem,
   f7,
 } from '@xenknight/framework7-vue';
 import $ from 'dom7';
@@ -115,6 +133,8 @@ export default {
     f7Checkbox,
     f7Link,
     f7Toolbar,
+    f7Toggle,
+    f7ListItem,
   },
   data() {
     const colors = Object.keys(f7.colors).filter(
@@ -125,6 +145,8 @@ export default {
       colors,
       theme,
       themeColor,
+      vibrant: false,
+      monochrome: false,
     };
   },
 
@@ -145,6 +167,28 @@ export default {
       themeColor = newColor;
       this.themeColor = newColor;
       f7.setColorTheme(newColor);
+    },
+
+    setMdColorScheme() {
+      if (!this.vibrant && !this.monochrome) {
+        f7.setMdColorScheme('default');
+      } else if (this.vibrant && !this.monochrome) {
+        f7.setMdColorScheme('vibrant');
+      } else if (!this.vibrant && this.monochrome) {
+        f7.setMdColorScheme('monochrome');
+      } else if (this.vibrant && this.monochrome) {
+        f7.setMdColorScheme('monochrome-vibrant');
+      }
+    },
+
+    setMdColorSchemeMonochrome(isMonochrome) {
+      this.monochrome = isMonochrome;
+      this.setMdColorScheme();
+    },
+
+    setMdColorSchemeVibrant(isVibrant) {
+      this.vibrant = isVibrant;
+      this.setMdColorScheme();
     },
   },
 };

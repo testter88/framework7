@@ -211,6 +211,11 @@ const Tab = {
         if (hasHighlight) {
           app.toolbar.setHighlight($tabbarEl);
         }
+        // Toolbar New Highlight
+        const $tabbarNewEl = $tabLinkEl.parents('.tabbar-new, .tabbar-new-icons');
+        if (app.toolbarNew && $tabbarNewEl.length > 0) {
+          app.toolbarNew.setHighlight($tabbarNewEl);
+        }
       }
     }
     return {

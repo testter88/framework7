@@ -22,6 +22,13 @@ import Subnavbar from './components/subnavbar/subnavbar.js';
 import TouchRipple from './components/touch-ripple/touch-ripple.js';
 import Modal from './components/modal/modal.js';
 
+// New Navbar
+import NavbarNew from './components/navbar-new/navbar.js';
+// New Searchbar
+import SearchbarNew from './components/searchbar-new/searchbar.js';
+// New Toolbar
+import ToolbarNew from './components/toolbar-new/toolbar.js';
+
 //IMPORT_COMPONENTS
 
 Framework7.use([
@@ -38,7 +45,10 @@ Framework7.use([
   Statusbar,
   View,
   Navbar,
+  NavbarNew,
+  SearchbarNew,
   Toolbar,
+  ToolbarNew,
   Subnavbar,
   TouchRipple,
   Modal,

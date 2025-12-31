@@ -1,26 +1,26 @@
 <template>
   <f7-page class="page-home">
-    <f7-navbar large transparent :sliding="false" md-center-title>
+    <f7-navbar-new large transparent md-center-title>
       <f7-nav-left>
         <f7-link panel-open="left" icon-ios="f7:menu" icon-md="material:menu"></f7-link>
       </f7-nav-left>
       <f7-nav-title sliding>Framework7 Vue</f7-nav-title>
       <f7-nav-right>
         <f7-link
-          class="searchbar-enable"
+          class="searchbar-new-enable"
           data-searchbar=".searchbar-components"
           icon-ios="f7:search"
           icon-md="material:search"
         ></f7-link>
       </f7-nav-right>
       <f7-nav-title-large>Framework7 Vue</f7-nav-title-large>
-      <f7-searchbar
+      <f7-searchbar-new
         class="searchbar-components"
         search-container=".components-list"
         search-in="a"
         expandable
-      ></f7-searchbar>
-    </f7-navbar>
+      ></f7-searchbar-new>
+    </f7-navbar-new>
 
     <f7-list strong inset dividers-ios class="searchbar-hide-on-search">
       <f7-list-item title="About Framework7" link="/about/">
@@ -387,6 +387,8 @@ import {
   f7Link,
   f7Searchbar,
   f7Icon,
+  f7NavbarNew,
+  f7SearchbarNew,
   theme,
 } from '@xenknight/framework7-vue';
 
@@ -404,6 +406,8 @@ export default {
     f7Link,
     f7Searchbar,
     f7Icon,
+    f7NavbarNew,
+    f7SearchbarNew,
   },
   props: {
     f7router: Object,

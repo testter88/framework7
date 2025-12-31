@@ -9,27 +9,28 @@
         />
       </f7-nav-right>
     </f7-navbar>
-    <f7-toolbar :position="toolbarPosition" tabbar icons>
-      <f7-link
-        tab-link="#tab-1"
-        tab-link-active
-        text="Tab 1"
-        icon-ios="f7:envelope_fill"
-        icon-md="material:email"
-      />
-      <f7-link
-        tab-link="#tab-2"
-        text="Tab 2"
-        icon-ios="f7:calendar_fill"
-        icon-md="material:today"
-      />
-      <f7-link
-        tab-link="#tab-3"
-        text="Tab 3"
-        icon-ios="f7:cloud_upload_fill"
-        icon-md="material:file_upload"
-      />
-    </f7-toolbar>
+    <f7-toolbar-new :position="toolbarPosition" tabbar icons>
+      <f7-toolbar-pane-new>
+        <f7-link tab-link="#tab-1" tab-link-active>
+          <f7-icon ios="f7:envelope_fill" md="material:email">
+            <f7-badge color="green">5</f7-badge>
+          </f7-icon>
+          <span class="tabbar-new-label">Inbox</span>
+        </f7-link>
+        <f7-link tab-link="#tab-2">
+          <f7-icon ios="f7:calendar_fill" md="material:today">
+            <f7-badge color="red">7</f7-badge>
+          </f7-icon>
+          <span class="tabbar-new-label">Calendar</span>
+        </f7-link>
+        <f7-link tab-link="#tab-3">
+          <f7-icon ios="f7:cloud_upload_fill" md="material:file_upload">
+            <f7-badge color="red">1</f7-badge>
+          </f7-icon>
+          <span class="tabbar-new-label">Upload</span>
+        </f7-link>
+      </f7-toolbar-pane-new>
+    </f7-toolbar-new>
 
     <f7-tabs>
       <f7-tab id="tab-1" class="page-content" tab-active>
@@ -166,8 +167,11 @@ import {
   f7Tabs,
   f7Tab,
   f7Link,
-  f7Toolbar,
+  f7ToolbarNew,
   f7NavRight,
+  f7Icon,
+  f7ToolbarPaneNew,
+  f7Badge,
 } from '@xenknight/framework7-vue';
 
 export default {
@@ -178,8 +182,11 @@ export default {
     f7Tabs,
     f7Tab,
     f7Link,
-    f7Toolbar,
+    f7ToolbarNew,
     f7NavRight,
+    f7Icon,
+    f7Badge,
+    f7ToolbarPaneNew,
   },
   data() {
     return {
